@@ -174,7 +174,12 @@ export default function Game({ sideLength = 4 }) {
         />
       </CalciteNavigation>
 
-      <CalciteShellPanel slot="panel-start" position="start">
+      <CalciteShellPanel
+        width="l"
+        slot="panel-start"
+        position="start"
+        resizable
+      >
         <CalcitePanel heading="Game Board">
           <Board
             sideLength={sideLength}
@@ -184,9 +189,11 @@ export default function Game({ sideLength = 4 }) {
           />
         </CalcitePanel>
       </CalciteShellPanel>
-      <CalcitePanel heading="Game Info">
-        <CalciteList>{moves}</CalciteList>
-      </CalcitePanel>
+      <CalciteShellPanel width="l" slot="panel-start" position="end">
+        <CalcitePanel heading="Game Info">
+          <CalciteList>{moves}</CalciteList>
+        </CalcitePanel>
+      </CalciteShellPanel>
     </CalciteShell>
   );
 }
